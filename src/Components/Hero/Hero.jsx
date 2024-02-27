@@ -4,7 +4,7 @@ import arrow_icon from '../Assets/arrow.png'
 import hero_image from '../Assets/hero_image.png'
 export default function Hero() {
     return (
-        <divc className="h-[100vh] flex bg-gradient-to-b from-violet-gradient to-white">
+        <divc className="h-[700px] mb-[50px] flex bg-gradient-to-b from-violet-gradient to-white">
             <div className="flex-1 flex flex-col justify-center gap-5 pl-44 leading-[1.1]">
                 <h2 className="text-[#090909] font-semibold text-2xl">NEW ARRIVALS ONLY</h2>
                 <div className="">

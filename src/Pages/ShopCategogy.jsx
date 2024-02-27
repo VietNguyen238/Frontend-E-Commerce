@@ -6,9 +6,9 @@ import Item from '../Components/Item/Item'
 export default function ShopCategogy(props) {
     const { all_product } = useContext(ShopContext)
     return (
-        <div className="flex flex-col">
-            <img src={ props.banner } alt="" className='w-[82%] my-[30px] mx-auto block' />
-            <div className="flex my-0 mx-[140px] justify-between items-center">
+        <div className="flex flex-col items-center">
+            <img src={ props.banner } alt="" className='w-[84%] my-[30px] mx-auto block' />
+            <div className="flex w-[80%] my-0 mx-[140px] justify-between items-center">
                 <p>
                     <span className="font-semibold">Showing 1-12</span> out of 36 products
                 </p>
@@ -16,7 +16,7 @@ export default function ShopCategogy(props) {
                     Sort by <img src={ download_icon } alt="" />
                 </div>
             </div>
-            <div className="mx-[140px] my-[20px] grid grid-cols-4 gap-y-[80px]">
+            <div className="my-[20px] grid grid-cols-4 gap-x-[25px] gap-y-[80px]">
                 {
                     all_product.map((item, i) => {
                         if (props.category === item.category) {
@@ -28,7 +28,7 @@ export default function ShopCategogy(props) {
                     })
                 }
             </div>
-            <div className="flex justify-center items-center cursor-pointer my-[150px] mx-auto w-[220px] h-[55px] rounded-[75px] text-[#787878] text-[18px] font-medium bg-[#ededed] ">
+            <div className="flex justify-center items-center cursor-pointer my-[50px] mx-auto w-[220px] h-[55px] rounded-[75px] text-[#787878] text-[18px] font-medium bg-[#ededed] ">
                 Explore More
             </div>
         </div>

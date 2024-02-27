@@ -1,14 +1,14 @@
 import React from 'react'
-import new_collection from '../Assets/new_collections'
+import data_product from '../Assets/data'
 import Item from '../Item/Item'
 
-export default function NewCollections() {
+export default function RelatedProducts() {
     return (
-        <div className='flex flex-col items-center gap-[10px] mb-[100px]'>
-            <h1 className="text-text text-[50px]">NEW COLLECTIONS</h1>
+        <div className='flex flex-col items-center gap-[10px] h-[650px]'>
+            <h1 className="text-[#171717] text-[50px] font-semibold">Related Products</h1>
             <hr className='w-[200px] h-[6px] rounded-[10px] bg-[#252525]' />
-            <div className="grid grid-cols-4 gap-[25px] mt-[25px]">
-                { new_collection.map((item, i) => {
+            <div className="mt-[50px] flex gap-[30px]">
+                { data_product.map((item, i) => {
                     return <Item key={ i } id={ item.id } name={ item.name } image={ item.image } new_price={ item.new_price } old_price={ item.old_price } />
                 }) }
             </div>

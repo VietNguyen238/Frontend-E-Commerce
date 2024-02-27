@@ -5,7 +5,7 @@ import pintester_icon from '../Assets/pintester_icon.png'
 import whatshapp_icon from '../Assets/whatsapp_icon.png'
 export default function Footer() {
     return (
-        <div className='flex flex-col justify-center items-center gap-[50px]'>
+        <div className='flex flex-col justify-center items-center mt-[50px] gap-[50px]'>
             <div className="flex items-center gap-[20px]">
                 <img src={ footer_logo } alt="" />
                 <p className="text-[38px] text-[#383838] mt-[15px] font-bold">SHOPPER</p>
