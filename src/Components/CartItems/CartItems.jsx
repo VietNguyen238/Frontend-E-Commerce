@@ -3,7 +3,7 @@ import { ShopContext } from '../../Context/ShopContext'
 import remove_icon from '../Assets/cart_cross_icon.png'
 
 export default function CartItems() {
-    const { all_product, removeFromProduct, cartItems, getTotalCartAmount } = useContext(ShopContext)
+    const { all_product, removeAProduct, addToCart, removeFromCart, cartItems, getTotalCartAmount } = useContext(ShopContext)
     return (
         <div className='my-[50px] mx-[100px]'>
             <div className="grid grid-cols-[0.5fr_2fr_1fr_1fr_1fr_1fr] items-center gap-[75px] py-[20px] text-[#454545] text-[18px] font-semibold">
@@ -22,9 +22,19 @@ export default function CartItems() {
                             <img src={ e.image } alt="" className='h-[80px]' />
                             <p className="">{ e.name }</p>
                             <p className="">${ e.new_price }</p>
-                            <button className="w-[50px] h-[40px] border-[2px] border-solid border-[#ebebeb] bg-[#fff]">{ cartItems[e.id] }</button>
+                            <div className="flex justify-between items-center mr-[40px]">
+                                <button onClick={ () => removeAProduct(e.id) } className='border border-solid border-[#ebebeb] h-[20px] w-[20px] pb-[3px] flex justify-center items-center rounded-[10px]'>
+                                    -
+                                </button>
+                                <button className="w-[45px] h-[35px] border-[2px] border-solid border-[#ebebeb] bg-[#fff]">
+                                    { cartItems[e.id] }
+                                </button>
+                                <button onClick={ () => addToCart(e.id) } className='border border-solid border-[#ebebeb] h-[20px] w-[20px] flex justify-center items-center rounded-[10px]'>
+                                    +
+                                </button>
+                            </div>
                             <p className="">${ e.new_price * cartItems[e.id] }</p>
-                            <img src={ remove_icon } onClick={ () => removeFromProduct(e.id) } alt="" className='w-[15px] mx-[40px] cursor-pointer' />
+                            <img src={ remove_icon } onClick={ () => removeFromCart(e.id) } alt="" className='w-[15px] mx-[40px] cursor-pointer' />
                         </div>
                         <hr className='h-[3px] border-0 bg-[#e2e2e2]' />
                     </div>

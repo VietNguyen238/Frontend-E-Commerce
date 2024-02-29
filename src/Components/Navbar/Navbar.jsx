@@ -7,6 +7,8 @@ import { ShopContext } from "../../Context/ShopContext";
 export default function Navbar() {
     const [menu, setMenu] = useState("shop");
     const { getTotalCartItems } = useContext(ShopContext);
+
+
     return (
         <>
             <div className="fixed z-10 top-0 left-0 right-0 w-[100%] mt-0 p-0 block bg-white">
@@ -17,16 +19,16 @@ export default function Navbar() {
                     </div>
                     <ul className='flex items-center list-none gap-12 text-gray-600 text-xl font-medium'>
                         <li onClick={ () => setMenu("shop") } className='cursor-pointer flex flex-col items-center font-medium gap-[4px]'>
-                            <Link to='/'>Shop</Link>
+                            <Link className="no-underline" to='/'>Shop</Link>
                             { menu === "shop" ? <hr className='border-none w-[80%] h-[3px] rounded-lg bg-red-500' /> : <></> } </li>
                         <li onClick={ () => setMenu("mens") } className='cursor-pointer flex flex-col items-center font-medium gap-[4px]'>
-                            <Link to='/mens'>Men</Link>
+                            <Link className="no-underline" to='/mens'>Men</Link>
                             { menu === "mens" ? <hr className='border-none w-[80%] h-[3px] rounded-lg bg-red-500' /> : <></> } </li>
                         <li onClick={ () => setMenu("womens") } className='cursor-pointer flex flex-col items-center font-medium gap-[4px]'>
-                            <Link to='/womens'>Women</Link>
+                            <Link className="no-underline" to='/womens'>Women</Link>
                             { menu === "womens" ? <hr className='border-none w-[80%] h-[3px] rounded-lg bg-red-500' /> : <></> } </li>
                         <li onClick={ () => setMenu("kids") } className='cursor-pointer flex flex-col items-center font-medium gap-[4px]'>
-                            <Link to='/kids'>Kids</Link>
+                            <Link className="no-underline" to='/kids'>Kids</Link>
                             { menu === "kids" ? <hr className='border-none w-[80%] h-[3px] rounded-lg bg-red-500' /> : <></> } </li>
                     </ul>
                     <div className='flex items-center gap-11'>

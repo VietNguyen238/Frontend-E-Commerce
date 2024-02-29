@@ -18,8 +18,13 @@ const ShopContextProvider = (props) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }))
     }
 
-    const removeFromCart = (itemId) => {
+    const removeAProduct = (itemId) => {
         setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }))
+    }
+
+    const removeFromCart = (itemId) => {
+        setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - prev }))
+
     }
 
     const getTotalCartAmount = () => {
@@ -43,7 +48,7 @@ const ShopContextProvider = (props) => {
         return totalItem
     }
 
-    const contextValue = { all_product, cartItems, addToCart, removeFromCart, getTotalCartAmount, getTotalCartItems }
+    const contextValue = { all_product, cartItems, addToCart, removeAProduct, removeFromCart, getTotalCartAmount, getTotalCartItems }
 
     return (
         <ShopContext.Provider value={ contextValue }>
