@@ -32,9 +32,14 @@ export default function Navbar() {
                             { menu === "kids" ? <hr className='border-none w-[80%] h-[3px] rounded-lg bg-red-500' /> : <></> } </li>
                     </ul>
                     <div className='flex items-center gap-11'>
-                        <button className='active:bg-slate-200 w-[147px] h-[48px] outline-none border border-gray-600 text-[24px] font-medium bg-white cursor-pointer rounded-[75px] items-center'>
-                            <Link to='/login'>Login</Link>
-                        </button>
+                        { localStorage.getItem('auth-token')
+                            ? <button onClick={ () => { localStorage.removeItem('auth-token'); window.location.replace("/"); } } className='active:bg-slate-200 w-[147px] h-[48px] outline-none border border-gray-600 text-[24px] font-medium bg-white cursor-pointer rounded-[75px] items-center'>
+                                Logout
+                            </button>
+                            : <button className='active:bg-slate-200 w-[147px] h-[48px] outline-none border border-gray-600 text-[24px] font-medium bg-white cursor-pointer rounded-[75px] items-center'>
+                                <Link to='/login'>Login</Link>
+                            </button> }
+
                         <Link to='/cart'><img src={ cart_icon } alt='' className='' /></Link>
                         <div className="w-[22px] h-[22px] flex justify-center items-center mt-[-30px] ml-[-55px] rounded-2xl bg-red-500 text-white text-[14px]">
                             { getTotalCartItems() }

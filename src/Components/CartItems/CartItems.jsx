@@ -15,9 +15,9 @@ export default function CartItems() {
                 <p className="">Remove</p>
             </div>
             <hr />
-            { all_product.map((e) => {
+            { all_product.map((e, index) => {
                 if (cartItems[e.id] > 0) {
-                    return <div>
+                    return <div key={ index }>
                         <div className="grid grid-cols-[0.5fr_2fr_1fr_1fr_1fr_1fr] items-center gap-[75px] py-[20px] text-[#454545] text-[17px] font-medium">
                             <img src={ e.image } alt="" className='h-[80px]' />
                             <p className="">{ e.name }</p>
